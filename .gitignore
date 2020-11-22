@@ -131,3 +131,6 @@ dmypy.json
 
 # Ignore collectstatic
 /src/static
+
+media
+/src/media/

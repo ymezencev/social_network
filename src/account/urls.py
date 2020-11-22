@@ -6,15 +6,12 @@ from account import views
 urlpatterns = [
 
     # path('login/', views.user_login, name='login'),
-    path('login/', auth_views.LoginView.as_view(), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-
-    # Шаблоны для доступа к обработчикам смены пароля.
-    path('password_change/', auth_views.PasswordChangeView.as_view(),
-         name='password_change'),
-    path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(),
-         name='password_change_done'),
-
+    # path('login/', auth_views.LoginView.as_view(), name='login'),
+    # path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    # path('password_change/', auth_views.PasswordChangeView.as_view(),
+    #      name='password_change'),
+    # path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(),
+    #      name='password_change_done'),
     # # Обработчики восстановления пароля.
     # path('password_reset/',
     #      auth_views.PasswordResetView.as_view(),
@@ -28,8 +25,10 @@ urlpatterns = [
     # path('reset/done/',
     #      auth_views.PasswordResetCompleteView.as_view(),
     #      name='password_reset_complete'),
-    #
+
     path('', include('django.contrib.auth.urls')),
+
+    path('register/', views.register, name='register'),
 
     path('', views.dashboard, name='dashboard'),
 ]

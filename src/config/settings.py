@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'social_django',
 
     'account.apps.AccountConfig',
+    'images.apps.ImagesConfig',
 ]
 
 MIDDLEWARE = [

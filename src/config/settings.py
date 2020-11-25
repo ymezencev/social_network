@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'django.contrib.postgres',
 
     'social_django',
+    'sorl.thumbnail',
 
     'account.apps.AccountConfig',
     'images.apps.ImagesConfig',

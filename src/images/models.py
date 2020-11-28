@@ -20,6 +20,9 @@ class Image(models.Model):
                                         related_name='images_liked',
                                         blank=True)
 
+    class Meta:
+        ordering = ['id']
+
     def __str__(self):
         return self.title
 

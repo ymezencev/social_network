@@ -1,5 +1,7 @@
 import os
 from pathlib import Path
+
+from django.urls import reverse_lazy
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -26,6 +28,7 @@ INSTALLED_APPS = [
 
     'account.apps.AccountConfig',
     'images.apps.ImagesConfig',
+    'actions.apps.ActionsConfig'
 ]
 
 MIDDLEWARE = [
@@ -126,3 +129,7 @@ EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER') # EMAIL
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = os.getenv('EMAIL_PORT')
 EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS')
+
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: reverse_lazy('user_detail', args=[u.username])
+}
